@@ -2,5 +2,5 @@ from django.urls import path, include
 from market import views
 
 urlpatterns = [
-    path('test_view',views.test_view),
+    path('user-registration', views.UserCreate.as_view(), name='registration'),
 ]
