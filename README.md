@@ -24,3 +24,9 @@ create superuser:
 username:hradmin
 Email adress: hradmin@gmail.com
 password:demo@123
+
+Run testcases:
+(venv)$ py manage.py test
+
+Swagger documentation:
+http://localhost:8000/redoc/
