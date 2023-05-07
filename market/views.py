@@ -1,7 +1,5 @@
 import requests
 
-from django.shortcuts import render
-from django.http import HttpResponse
 from django.contrib.auth.models import User
 
 from rest_framework.generics import CreateAPIView
@@ -31,6 +29,8 @@ class MarketsListView(APIView):
 
 class MarketsDeatilView(APIView):
     '''To get the market detail summery based on symbol'''
+    permission_classes = [permissions.IsAuthenticated]
+
     def get(self, request, symbol, fromat=None):
         response = requests.get(f"https://api.bittrex.com/v3/markets/{symbol}/summary")
         if response.status_code == 200:

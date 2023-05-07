@@ -74,15 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'crypto_currency_service.wsgi.application'
 
-# SWAGGER_SETTINGS = {
-#     'USE_SESSION_AUTH': True
-#     # 'SECURITY_DEFINITIONS': {
-#     #     'basic': {
-#     #         'type': 'basic'
-#     #     }
-#     # },
-# }
-
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
@@ -94,7 +85,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication'
     ],
 }
 
